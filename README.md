@@ -46,9 +46,11 @@ cd api2root
 ```bash
 1. Build 
 sudo docker compose build --no-cache
-
+or 
 2. Start Containers
 sudo docker compose up -d
+or
+sudo docker compose -f docker-compose.yml up
 or
 sudo docker compose -f docker-compose.yml --compatibility up -d
 
