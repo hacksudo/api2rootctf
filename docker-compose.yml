@@ -1,0 +1,44 @@
+# remove version line warning
+
+networks:
+  vulnnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.31.0.0/24"
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: vuln-mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vulnreset
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      retries: 20
+    networks:
+      vulnnet:
+        ipv4_address: 172.31.0.10
+
+  web:
+    build: .
+    container_name: api-web
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    networks:
+      vulnnet:
+        ipv4_address: 172.31.0.11
+
+volumes:
+  db_data:
