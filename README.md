@@ -4,7 +4,6 @@ A fully Dockerized vulnerable API ecosystem designed for learning and demonstrat
 
 This lab simulates modern mobile apps + backend authentication workflows — intentionally insecure for ethical hacking, CTF training, and offensive security learning.
 
-<img width="1062" height="653" alt="image" src="https://github.com/user-attachments/assets/61ae8d50-ed2e-4edc-9667-aad1b69c2921" />
 
 ---
 
