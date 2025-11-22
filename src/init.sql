@@ -11,5 +11,5 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 INSERT INTO users (email, password)
-SELECT 'admin@example.com', MD5('admin123')
-WHERE NOT EXISTS (SELECT 1 FROM users WHERE email='admin@example.com');
+SELECT 'admin@hacksudo.com', MD5('admin123')
+WHERE NOT EXISTS (SELECT 1 FROM users WHERE email='admin@hacksudo.com');
