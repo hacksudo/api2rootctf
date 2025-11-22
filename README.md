@@ -37,8 +37,8 @@ This lab simulates modern mobile apps + backend authentication workflows — int
 ### **1️⃣ Clone the Repository**
 
 ```bash
-git clone https://github.com/hacksudo/api2root.git
-cd api2root
+git clone https://github.com/hacksudo/api2rootctf.git
+cd api2rootctf
 ```
 
 ## Build 
